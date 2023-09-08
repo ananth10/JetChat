@@ -8,6 +8,7 @@ import com.ananth.jetchat.data.EMOJIS.EMOJI_FLAMINGO
 import com.ananth.jetchat.data.EMOJIS.EMOJI_MELTING
 import com.ananth.jetchat.data.EMOJIS.EMOJI_PINK_HEART
 import com.ananth.jetchat.data.EMOJIS.EMOJI_POINTS
+import com.ananth.jetchat.profile.ProfileScreenState
 
 private val initialMessages = listOf(
     Message(
@@ -53,6 +54,31 @@ val exampleUiState = ConversationUiState(
     channelName = "#composers",
     channelMembers = 42
 )
+
+val colleagueProfile = ProfileScreenState(
+    userId = "12345",
+    photo = R.drawable.someone_else,
+    name = "Taylor Brooks",
+    status = "Away",
+    displayName = "taylor",
+    position = "Senior Android Dev at Openlane",
+    twitter = "twitter.com/taylorbrookscodes",
+    timeZone = "12:25 AM local time (Eastern Daylight Time)",
+    commonChannel = "2"
+)
+
+val meProfile = ProfileScreenState(
+    userId = "me",
+    photo = R.drawable.ali,
+    name = "Ali Conors",
+    status = "Online",
+    displayName = "aliconors",
+    position = "Senior Android Dev at Yearin\nGoogle Developer Expert",
+    twitter = "twitter.com/aliconors",
+    timeZone = "In your timezone",
+    commonChannel = null
+)
+
 object EMOJIS {
     // EMOJI 15
     const val EMOJI_PINK_HEART = "\uD83E\uDE77"

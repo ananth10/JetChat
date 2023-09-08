@@ -15,7 +15,7 @@ import androidx.compose.ui.util.lerp
 import kotlin.math.roundToInt
 
 @Composable
-fun AnimatingFaBContent(
+fun AnimatingFabContent(
     modifier: Modifier = Modifier,
     icon: @Composable () -> Unit,
     text: @Composable () -> Unit,
