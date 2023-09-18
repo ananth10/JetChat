@@ -2,13 +2,13 @@ package com.ananth.jetchat.profile
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Immutable
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ananth.jetchat.data.colleagueProfile
 import com.ananth.jetchat.data.meProfile
 
 class ProfileViewModel() : ViewModel() {
-    private val _userData = MutableLiveData<ProfileScreenState>()
     private var userId: String = ""
 
     fun setUserId(newUserId: String?) {
@@ -21,6 +21,9 @@ class ProfileViewModel() : ViewModel() {
             colleagueProfile
         }
     }
+
+    private val _userData = MutableLiveData<ProfileScreenState>()
+    val userData:LiveData<ProfileScreenState> = _userData
 }
 
 @Immutable
