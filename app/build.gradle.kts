@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -38,9 +39,10 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
@@ -55,9 +57,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.activity:activity-compose:1.7.0")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui:1.5.0")
-    implementation("androidx.compose.ui:ui-graphics:1.5.0")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.5.0")
+    implementation("androidx.compose.ui:ui:1.5.1")
+    implementation("androidx.compose.ui:ui-graphics:1.5.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.1")
     implementation("androidx.fragment:fragment-ktx:1.6.1")
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
@@ -67,11 +69,17 @@ dependencies {
     implementation ("com.google.android.material:material:1.9.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation("androidx.activity:activity-ktx:1.7.2")
-    implementation ("androidx.compose.ui:ui-text-google-fonts:1.5.0")
-    implementation ("androidx.compose.ui:ui-util:1.5.0")
-    implementation ("androidx.compose.material:material-icons-extended:1.5.0")
+    implementation ("androidx.compose.ui:ui-text-google-fonts:1.5.1")
+    implementation ("androidx.compose.ui:ui-util:1.5.1")
+    implementation ("androidx.compose.material:material-icons-extended:1.5.1")
     implementation("androidx.compose.runtime:runtime:1.5.1")
     implementation("androidx.compose.runtime:runtime-livedata:1.5.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
+    implementation("androidx.compose.ui:ui-viewbinding:1.5.1")
+
+
+    // Jetpack Compose Integration
+    implementation("androidx.navigation:navigation-compose:2.7.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

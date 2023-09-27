@@ -81,7 +81,9 @@ fun AnimatingFabContent(
         icon = icon,
         text = text,
         opacityProgress = { textOpacity },
-        widthProgress = { fabWidthFactor })
+        widthProgress = { fabWidthFactor },
+        modifier=modifier
+        )
 
 }
 
@@ -89,7 +91,7 @@ fun AnimatingFabContent(
 fun IconAndTextRow(
     icon: @Composable () -> Unit,
     text: @Composable () -> Unit,
-    opacityProgress: () -> Float,
+    opacityProgress: () -> Float, // Lambdas instead of Floats, to defer read
     widthProgress: () -> Float,
     modifier: Modifier = Modifier
 ) {

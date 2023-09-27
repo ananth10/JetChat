@@ -156,7 +156,8 @@ fun Position(data: ProfileScreenState, modifier: Modifier = Modifier) {
     Text(
         modifier = modifier,
         text = data.position,
-        style = MaterialTheme.typography.headlineSmall
+        style = MaterialTheme.typography.bodyLarge,
+        color = MaterialTheme.colorScheme.onSurfaceVariant
     )
 }
 
