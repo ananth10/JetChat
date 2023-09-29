@@ -27,7 +27,7 @@ fun JetchatIcon(
         Modifier
     }
 
-    Box(modifier = Modifier then (semantics)) {
+    Box(modifier = modifier.then(semantics)) {
         Icon(
             painter = painterResource(id = R.drawable.ic_jetchat_back),
             contentDescription = null,

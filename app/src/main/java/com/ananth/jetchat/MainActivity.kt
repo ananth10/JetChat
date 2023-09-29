@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                 setContent {
                     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
                     val drawerOpen by viewModel.drawerShouldBeOpened.collectAsStateWithLifecycle()
-
                     if (drawerOpen) {
                         // Open drawer and reset state in VM.
                         LaunchedEffect(Unit) {

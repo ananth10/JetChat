@@ -33,6 +33,7 @@ import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
@@ -86,19 +87,21 @@ fun ProfileScreen(
                     userData = userData,
                     containerHeight = this@BoxWithConstraints.maxHeight
                 )
-                val fabExtended by remember {
-                    derivedStateOf { scrollState.value == 0 }
-                }
-                ProfileFab(
-                    extended = fabExtended,
-                    userIsMe = userData.isMe(),
-                    modifier = Modifier
-                        // Offsets the FAB to compensate for CoordinatorLayout collapsing behaviour
-                        .offset(y = ((-100).dp)),
-                    onFabClicked = { functionalityNotAvailablePopupShown = true }
-                )
+
             }
+            val fabExtended by remember {
+                derivedStateOf { scrollState.value == 0 }
+            }
+            ProfileFab(
+                extended = fabExtended,
+                userIsMe = userData.isMe(),
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .offset(y = ((-100).dp)),   // Offsets the FAB to compensate for CoordinatorLayout collapsing behaviour
+                onFabClicked = { functionalityNotAvailablePopupShown = true }
+            )
         }
+
     }
 }
 
@@ -222,7 +225,7 @@ fun ProfileFab(
     modifier: Modifier = Modifier,
     onFabClicked: () -> Unit = {}
 ) {
-
+    println("TEST: $extended")
     key(userIsMe) { //Prevent multiple invocation to execute during composition
 
         FloatingActionButton(
