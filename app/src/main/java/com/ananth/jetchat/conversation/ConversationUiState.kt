@@ -5,10 +5,11 @@ class ConversationUiState(
     val channelMembers: Int,
     initialMessages: List<Message>
 ) {
-    private var messages = initialMessages.toMutableList()
+    private var _messages = initialMessages.toMutableList()
+    val messages:List<Message> = _messages
 
     fun addMessages(msg:Message){
-       messages.add(msg)
+        _messages.add(msg)
     }
 
 }
