@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
                     JetchatDrawer(drawerState = drawerState, onProfileClicked = {
                         val bundle = bundleOf("userId" to it)
-                        findNavController().navigate(R.id.nav_profile)
+                        findNavController().navigate(R.id.nav_profile,bundle)
                         scope.launch {
                             drawerState.close()
                         }

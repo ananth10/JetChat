@@ -62,10 +62,13 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ananth.jetchat.FunctionalityNotAvailablePopup
 import com.ananth.jetchat.R
 import com.ananth.jetchat.components.JetchatAppBar
+import com.ananth.jetchat.data.exampleUiState
+import com.ananth.jetchat.ui.theme.JetchatTheme
 import kotlinx.coroutines.launch
 
 /**
@@ -481,6 +484,32 @@ fun ClickableMessage(
                 }
         }
     )
+}
+
+@RequiresApi(Build.VERSION_CODES.O)
+@Preview
+@Composable
+fun ConversationPreview() {
+    JetchatTheme {
+        ConversationContent(uiState = exampleUiState, navigateToProfile = {})
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Preview
+@Composable
+fun ChannelBarPreview() {
+    JetchatTheme {
+        ChannelNameBar(channelName = "composers", channelNumbers = 52) {
+
+        }
+    }
+}
+
+@Preview
+@Composable
+fun DauHeaderPreview() {
+    DayHeader(dayString = "Aug 15")
 }
 
 private val JumpToBottomThreshold = 56.dp
