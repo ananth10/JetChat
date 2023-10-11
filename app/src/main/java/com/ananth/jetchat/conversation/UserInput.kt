@@ -79,6 +79,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.FirstBaseline
+import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.SemanticsPropertyKey
@@ -339,7 +340,7 @@ fun UserInputSelector(
         }
         Spacer(modifier = Modifier.weight(1f))
 
-        val disabledContentColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.03f)
+        val disabledContentColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f)
 
         val buttonColors = ButtonDefaults.buttonColors(
             disabledContainerColor = Color.Transparent,

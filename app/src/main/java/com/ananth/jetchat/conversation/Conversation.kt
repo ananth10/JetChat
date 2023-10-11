@@ -55,6 +55,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalUriHandler
@@ -123,6 +124,7 @@ fun ConversationContent(
             )
             UserInput(
                 onMessageSent = { content ->
+                    println("TES: $content")
                     uiState.addMessages(Message(authorMe, content, timeNow))
                 },
                 resetScroll = {
@@ -420,7 +422,7 @@ fun ChatItemBubble(
     val backGroundBubbleColor = if (isUserMe) {
         MaterialTheme.colorScheme.primary
     } else {
-        MaterialTheme.colorScheme.onSurfaceVariant
+        MaterialTheme.colorScheme.surfaceVariant
     }
 
     Column {
