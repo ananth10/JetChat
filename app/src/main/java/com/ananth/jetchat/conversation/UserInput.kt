@@ -565,14 +565,13 @@ fun RecordingIndicator(swipeOffset: () -> Float) {
             }
             .clip(CircleShape)
             .background(Color.Red))
-
         Text(
             duration.toComponents { minutes, seconds, _ ->
                 val min = minutes.toString().padStart(2, '0')
-                val sec = minutes.toString().padStart(2, '0')
+                val sec = seconds.toString().padStart(2, '0')
                 "$min:$sec"
             },
-            modifier = Modifier.alignByBaseline()
+            Modifier.alignByBaseline()
         )
         Box(
             modifier = Modifier
